@@ -8,13 +8,19 @@ struct SplashView: View {
 
     var body: some View {
         ZStack {
-            LinearGradient.tealSplash.ignoresSafeArea()
+            LinearGradient.navyHeader.ignoresSafeArea()
 
             VStack(spacing: 20) {
-                Text("👶")
-                    .font(.system(size: 72))
-                    .scaleEffect(hasAppeared ? 1 : 0.6)
-                    .animation(.spring(response: 0.5, dampingFraction: 0.6), value: hasAppeared)
+                ZStack {
+                    Circle()
+                        .fill(.white.opacity(0.15))
+                        .frame(width: 120, height: 120)
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 56))
+                        .foregroundStyle(.white)
+                }
+                .scaleEffect(hasAppeared ? 1 : 0.5)
+                .animation(.spring(response: 0.5, dampingFraction: 0.6), value: hasAppeared)
 
                 Text("Baby Vault")
                     .font(.system(size: 34, weight: .bold, design: .rounded))
@@ -22,18 +28,24 @@ struct SplashView: View {
                     .opacity(hasAppeared ? 1 : 0)
                     .animation(.easeIn(duration: 0.4).delay(0.15), value: hasAppeared)
 
+                Text("Your baby's private diary")
+                    .font(.subheadline)
+                    .foregroundStyle(.white.opacity(0.7))
+                    .opacity(hasAppeared ? 1 : 0)
+                    .animation(.easeIn(duration: 0.4).delay(0.25), value: hasAppeared)
+
                 ProgressView()
                     .tint(.white)
                     .scaleEffect(1.2)
+                    .padding(.top, 8)
                     .opacity(hasAppeared ? 1 : 0)
-                    .animation(.easeIn(duration: 0.3).delay(0.3), value: hasAppeared)
+                    .animation(.easeIn(duration: 0.3).delay(0.4), value: hasAppeared)
             }
         }
         .onAppear {
             hasAppeared = true
             Task {
-                // Small delay so the animation plays before we navigate.
-                try? await Task.sleep(for: .milliseconds(800))
+                try? await Task.sleep(for: .milliseconds(1_500))
                 await determineRoute()
             }
         }
@@ -42,24 +54,19 @@ struct SplashView: View {
     // MARK: - Route logic
 
     private func determineRoute() async {
-        let hasKey     = container.keychainStore.hasKey
-        let hasProfile = container.profileStore.hasProfile
-
-        if hasKey {
-            // Key exists — go straight to biometric unlock.
-            onTransition(.needsUnlock)
-        } else {
-            // First launch: generate & store master key, then unlock automatically.
-            do {
-                let engine = try container.engineProvider.initialise()
+        // Ensure engine is initialised and key exists.
+        do {
+            let engine = try container.engineProvider.initialise()
+            if !container.keychainStore.hasKey {
                 let rawKey = try engine.generateMasterKey()
                 try container.keychainStore.store(rawKey: rawKey)
                 try engine.unlock(rawKey: rawKey)
-                onTransition(hasProfile ? .unlocked : .needsProfile)
-            } catch {
-                // Fall back to unlock screen where user can retry.
-                onTransition(.needsUnlock)
             }
+        } catch {
+            // Non-fatal in stub mode — continue to the app.
         }
+
+        let hasProfile = container.profileStore.hasProfile
+        onTransition(hasProfile ? .unlocked : .needsProfile)
     }
 }

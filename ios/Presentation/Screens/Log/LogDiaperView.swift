@@ -10,6 +10,8 @@ struct LogDiaperView: View {
         Group {
             if let vm = viewModel {
                 LogDiaperContent(viewModel: vm, dismiss: { dismiss() })
+            } else {
+                Color.warmCream.ignoresSafeArea()
             }
         }
         .onAppear {
@@ -18,7 +20,9 @@ struct LogDiaperView: View {
             }
         }
         .navigationTitle("Log Diaper")
+        #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
+        #endif
     }
 }
 

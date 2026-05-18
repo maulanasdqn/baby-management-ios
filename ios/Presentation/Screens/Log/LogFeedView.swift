@@ -10,6 +10,8 @@ struct LogFeedView: View {
         Group {
             if let vm = viewModel {
                 LogFeedContent(viewModel: vm, dismiss: { dismiss() })
+            } else {
+                Color.warmCream.ignoresSafeArea()
             }
         }
         .onAppear {
@@ -18,7 +20,9 @@ struct LogFeedView: View {
             }
         }
         .navigationTitle("Log Feed")
+        #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
+        #endif
     }
 }
 
@@ -56,7 +60,9 @@ private struct LogFeedContent: View {
                         Label("Duration (minutes)", systemImage: "timer").formLabel()
                         TextField("e.g. 15", text: $viewModel.durationText)
                             .textFieldStyle(.plain)
+                            #if os(iOS)
                             .keyboardType(.numberPad)
+                            #endif
                             .formInput()
                     }
                     .formSection()
@@ -68,7 +74,9 @@ private struct LogFeedContent: View {
                         Label("Amount (ml)", systemImage: "flask.fill").formLabel()
                         TextField("e.g. 120", text: $viewModel.amountText)
                             .textFieldStyle(.plain)
+                            #if os(iOS)
                             .keyboardType(.numberPad)
+                            #endif
                             .formInput()
                     }
                     .formSection()

@@ -12,7 +12,7 @@ struct UnlockView: View {
             if let vm = viewModel {
                 UnlockContent(viewModel: vm, onUnlocked: onUnlocked)
             } else {
-                LinearGradient.tealSplash.ignoresSafeArea()
+                LinearGradient.navyHeader.ignoresSafeArea()
             }
         }
         .onAppear {

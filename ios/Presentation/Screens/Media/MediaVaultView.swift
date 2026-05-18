@@ -17,7 +17,7 @@ struct MediaVaultView: View {
         }
         .navigationTitle("Media Vault")
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .automatic) {
                 PhotosPicker(selection: $selectedItem, matching: .images) {
                     Image(systemName: "plus")
                 }
@@ -113,11 +113,18 @@ private struct MediaThumbView: View {
             Color.indigo100
             if isLoading {
                 ProgressView()
-            } else if let data = imageData, let uiImage = UIImage(data: data) {
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .scaledToFill()
-                    .clipped()
+            } else if let data = imageData {
+                #if canImport(UIKit)
+                if let uiImage = UIImage(data: data) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFill()
+                        .clipped()
+                }
+                #else
+                Image(systemName: "photo")
+                    .foregroundStyle(Color.indigo400)
+                #endif
             } else {
                 Image(systemName: "lock.fill")
                     .foregroundStyle(Color.indigo400)

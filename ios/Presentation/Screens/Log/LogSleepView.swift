@@ -10,6 +10,8 @@ struct LogSleepView: View {
         Group {
             if let vm = viewModel {
                 LogSleepContent(viewModel: vm, dismiss: { dismiss() })
+            } else {
+                Color.warmCream.ignoresSafeArea()
             }
         }
         .onAppear {
@@ -18,7 +20,9 @@ struct LogSleepView: View {
             }
         }
         .navigationTitle("Log Sleep")
+        #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
+        #endif
     }
 }
 

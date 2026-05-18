@@ -11,6 +11,8 @@ struct ProfileSetupView: View {
         Group {
             if let vm = viewModel {
                 ProfileSetupContent(viewModel: vm, onDone: onDone)
+            } else {
+                Color.warmCream.ignoresSafeArea()
             }
         }
         .onAppear {
@@ -36,8 +38,9 @@ private struct ProfileSetupContent: View {
                 VStack(spacing: 32) {
                     // Header
                     VStack(spacing: 12) {
-                        Text("👶")
+                        Image(systemName: "heart.fill")
                             .font(.system(size: 64))
+                            .foregroundStyle(Color.navyPrimary)
                         Text("Welcome to Baby Vault")
                             .font(.system(size: 26, weight: .bold, design: .rounded))
                             .foregroundStyle(Color.textPrimary)

@@ -1,7 +1,7 @@
 import Foundation
 import LocalAuthentication
 
-enum UnlockState {
+enum UnlockState: Equatable {
     case idle
     case authenticating
     case unlocking

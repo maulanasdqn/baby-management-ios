@@ -15,7 +15,7 @@ struct TimelineView: View {
         }
         .navigationTitle("Milestones")
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .automatic) {
                 Button { viewModel?.showAdd() } label: {
                     Image(systemName: "plus")
                 }
@@ -123,7 +123,9 @@ private struct AddMilestoneSheet: View {
                 }
             }
             .navigationTitle("Add Milestone")
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { viewModel.dismissAdd() }

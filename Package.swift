@@ -5,6 +5,7 @@ let package = Package(
     name: "BabyVault",
     platforms: [
         .iOS(.v17),
+        .macOS(.v14),
     ],
     products: [
         .executable(name: "BabyVault", targets: ["BabyVault"]),

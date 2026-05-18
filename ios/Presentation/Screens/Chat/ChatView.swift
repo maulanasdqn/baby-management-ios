@@ -14,9 +14,11 @@ struct ChatView: View {
             }
         }
         .navigationTitle("AI Assistant")
+        #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
+        #endif
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .automatic) {
                 Button("Clear") { viewModel?.clearHistory() }
                     .font(.caption)
             }
@@ -39,7 +41,6 @@ private struct ChatContent: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // Messages
             ScrollViewReader { proxy in
                 ScrollView {
                     LazyVStack(spacing: 12) {
@@ -66,7 +67,6 @@ private struct ChatContent: View {
 
             Divider()
 
-            // Input bar
             HStack(spacing: 10) {
                 TextField("Ask about feeds, sleep, milestones…", text: $viewModel.state.inputText, axis: .vertical)
                     .textFieldStyle(.plain)
@@ -99,8 +99,9 @@ private struct ChatContent: View {
 private struct WelcomeBanner: View {
     var body: some View {
         VStack(spacing: 12) {
-            Text("🤖")
+            Image(systemName: "cpu.fill")
                 .font(.system(size: 48))
+                .foregroundStyle(Color.navyPrimary)
             Text("Baby Care AI")
                 .font(.title2.weight(.bold))
                 .foregroundStyle(Color.textPrimary)
@@ -134,8 +135,8 @@ private struct MessageBubble: View {
                 )
                 .clipShape(
                     message.role == .user
-                    ? RoundedCorner(radius: 18, corners: [.topLeft, .topRight, .bottomLeft])
-                    : RoundedCorner(radius: 18, corners: [.topLeft, .topRight, .bottomRight])
+                    ? UnevenRoundedRectangle(topLeadingRadius: 18, bottomLeadingRadius: 18, bottomTrailingRadius: 0, topTrailingRadius: 18)
+                    : UnevenRoundedRectangle(topLeadingRadius: 18, bottomLeadingRadius: 0, bottomTrailingRadius: 18, topTrailingRadius: 18)
                 )
                 .shadow(color: .black.opacity(0.06), radius: 4, x: 0, y: 2)
 
@@ -173,18 +174,3 @@ private struct TypingIndicator: View {
     }
 }
 
-// MARK: - Rounded corner helper
-
-private struct RoundedCorner: Shape {
-    var radius: CGFloat
-    var corners: UIRectCorner
-
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(
-            roundedRect: rect,
-            byRoundingCorners: corners,
-            cornerRadii: CGSize(width: radius, height: radius)
-        )
-        return Path(path.cgPath)
-    }
-}

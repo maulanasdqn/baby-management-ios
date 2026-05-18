@@ -79,6 +79,7 @@ struct RootView: View {
                 MainTabView()
             }
         }
+        .background(Color.warmCream.ignoresSafeArea())
     }
 }
 

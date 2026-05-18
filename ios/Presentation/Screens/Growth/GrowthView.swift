@@ -16,7 +16,7 @@ struct GrowthView: View {
         }
         .navigationTitle("Growth")
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .automatic) {
                 Button { viewModel?.showAdd() } label: {
                     Image(systemName: "plus")
                 }
@@ -144,14 +144,18 @@ private struct AddGrowthSheet: View {
                         Text("Weight (g)")
                         Spacer()
                         TextField("e.g. 5400", text: $viewModel.state.weightText)
+                            #if os(iOS)
                             .keyboardType(.numberPad)
+                            #endif
                             .multilineTextAlignment(.trailing)
                     }
                     HStack {
                         Text("Height (mm)")
                         Spacer()
                         TextField("e.g. 560", text: $viewModel.state.heightText)
+                            #if os(iOS)
                             .keyboardType(.numberPad)
+                            #endif
                             .multilineTextAlignment(.trailing)
                     }
                 }
@@ -168,7 +172,9 @@ private struct AddGrowthSheet: View {
                 }
             }
             .navigationTitle("Log Growth")
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { viewModel.dismissAdd() }

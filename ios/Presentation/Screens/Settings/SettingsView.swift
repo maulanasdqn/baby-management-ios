@@ -57,7 +57,9 @@ private struct SettingsContent: View {
             Section("Sync") {
                 LabeledContent("Status", value: viewModel.state.syncStatus)
                 TextField("Server URL", text: $viewModel.state.serverUrl)
+                    #if os(iOS)
                     .textInputAutocapitalization(.never)
+                    #endif
                     .autocorrectionDisabled()
                 SecureField("API Key", text: $viewModel.state.apiKey)
                 Button("Save Sync Config") { viewModel.configureSyncServer() }
@@ -107,7 +109,9 @@ private struct SettingsContent: View {
                 }
             }
         }
+        #if os(iOS)
         .listStyle(.insetGrouped)
+        #endif
         .background(Color.warmCream.ignoresSafeArea())
         .alert("Error", isPresented: .constant(viewModel.state.error != nil), actions: {
             Button("OK") { viewModel.state.error = nil }

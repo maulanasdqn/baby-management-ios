@@ -10,6 +10,8 @@ struct HomeView: View {
         Group {
             if let vm = viewModel {
                 HomeContent(viewModel: vm, navigate: navigate)
+            } else {
+                Color.warmCream.ignoresSafeArea()
             }
         }
         .onAppear {
@@ -25,7 +27,9 @@ struct HomeView: View {
                 Task { await viewModel?.load() }
             }
         }
+        #if os(iOS)
         .navigationBarHidden(true)
+        #endif
     }
 
     private func navigate(to route: Route) {
@@ -40,7 +44,7 @@ private struct HomeContent: View {
     let viewModel: HomeViewModel
     let navigate: (Route) -> Void
 
-    private struct QuickAction {
+    fileprivate struct QuickAction {
         let label: String
         let icon: String
         let bg: Color
@@ -157,7 +161,9 @@ private struct HomeHeaderView: View {
                         Circle()
                             .fill(Color.pinkBlob.opacity(0.35))
                             .frame(width: 38, height: 38)
-                        Text("👶").font(.body)
+                        Image(systemName: "heart.fill")
+                            .font(.body)
+                            .foregroundStyle(.white)
                     }
 
                     VStack(alignment: .leading, spacing: 2) {
