@@ -19,7 +19,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 IOS_OUT="$SCRIPT_DIR/build"
-GENERATED_DIR="$SCRIPT_DIR/ios/Generated"
+GENERATED_DIR="$SCRIPT_DIR/Generated"
 CORE_REPO="https://github.com/maulanasdqn/baby-management-core"
 DEFAULT_CORE_DIR="$(dirname "$SCRIPT_DIR")/baby-management-core"
 
