@@ -18,7 +18,7 @@ let package = Package(
         .executableTarget(
             name: "BabyVault",
             dependencies: ["VaultFFI"],
-            path: "ios",
+            path: ".",
             swiftSettings: [
                 .define("VAULT_FFI_AVAILABLE"),
             ]
