@@ -1,0 +1,4 @@
+module vaultFFI {
+    header "vaultFFI.h"
+    export *
+}

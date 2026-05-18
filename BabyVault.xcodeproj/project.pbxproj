@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051C7C17223504AEDC3612C0 /* VaultFFI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D75877F2C1BE58BFEADACD5 /* VaultFFI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0CCF2883D780D1B8BC75D0A4 /* MediaVaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D411EC4DCA93FF86B44B1D /* MediaVaultView.swift */; };
 		1129C711EEEA9E3210D5C42B /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED42AB57465998537E57CEFF /* UnlockView.swift */; };
 		144ED27AC06B3B41BDCACDE4 /* DiaperRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27551EAC6631B162765578D5 /* DiaperRepository.swift */; };
@@ -41,12 +42,13 @@
 		74FBBB338FD05958580ECD11 /* MediaVaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5414749470F8CA068F4E1D /* MediaVaultViewModel.swift */; };
 		7B62B4E54179CE3832879FCD /* EngineSleepRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C9ED0BA43EEA492F40AA1 /* EngineSleepRepository.swift */; };
 		7D2BB945825E1A100C15093B /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43797C2B7C71CCA5C6F099A6 /* HistoryViewModel.swift */; };
-		84C5B0D3E033CDC63C7BA663 /* VaultFFIStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44445F21B43658136083DF33 /* VaultFFIStubs.swift */; };
 		888A37CB0E63A8167743DBB6 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE605928D64CA0BE077867D /* SettingsViewModel.swift */; };
 		8A1327BA4584F63361AF65D2 /* EngineMediaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AD6C20612FD4F9E5B24B45 /* EngineMediaRepository.swift */; };
+		92C41E5C5105C674C4F8F15D /* VaultFFI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D75877F2C1BE58BFEADACD5 /* VaultFFI.xcframework */; };
 		98D31C7C266A8593A602DDCC /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DFD5A9537873167D58153D /* AppTheme.swift */; };
 		9A2A3E373C6B68FE89709972 /* MediaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C285CA4734CA9372AA05143 /* MediaRepository.swift */; };
 		9A6234CE0196DF8B3F5BC31B /* ProfileSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7906F2C04A1204428F860D3 /* ProfileSetupViewModel.swift */; };
+		9E48413A6F283FC4548B72AE /* vault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A41E06725516B2E345850E8 /* vault.swift */; };
 		A1CF9D673C5E606F8510A05D /* GrowthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98EB71BBF95E5FFFBC9B1E /* GrowthView.swift */; };
 		A7A619312F8499FFB8CD2BBD /* EngineGrowthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AA88ACC4BA18E183D67A6 /* EngineGrowthRepository.swift */; };
 		B0917DB8843847D65D3DA6ED /* EngineFeedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1717FF56B7DE3D7BFA0814B /* EngineFeedRepository.swift */; };
@@ -65,12 +67,29 @@
 		FE7C749BECDB7440E77C5611 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5894784C80C750FCB42F25D /* ChatView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DED0339F244E49A109A24314 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				051C7C17223504AEDC3612C0 /* VaultFFI.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0211D66EF0AAAA84768A8190 /* SleepLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLog.swift; sourceTree = "<group>"; };
+		1A41E06725516B2E345850E8 /* vault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vault.swift; sourceTree = "<group>"; };
+		1D75877F2C1BE58BFEADACD5 /* VaultFFI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VaultFFI.xcframework; path = build/VaultFFI.xcframework; sourceTree = "<group>"; };
 		1D9089E5757495C0E9F785DC /* GrowthLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthLog.swift; sourceTree = "<group>"; };
 		27551EAC6631B162765578D5 /* DiaperRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaperRepository.swift; sourceTree = "<group>"; };
 		2982A3DB61D89FD334EDEE99 /* MilestoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneRepository.swift; sourceTree = "<group>"; };
 		2F787162510CC2DCDBB7148E /* LogSleepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSleepViewModel.swift; sourceTree = "<group>"; };
+		2FDE3810495E8110613027DD /* vaultFFI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vaultFFI.h; sourceTree = "<group>"; };
 		374F4BCE839B5D047DE436EE /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
 		3C285CA4734CA9372AA05143 /* MediaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRepository.swift; sourceTree = "<group>"; };
 		3C93DC193F72C4ADE36F8226 /* LogSleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSleepView.swift; sourceTree = "<group>"; };
@@ -79,7 +98,6 @@
 		41F8CD4E894058C3B9FA4408 /* BabyVault.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BabyVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FE0DD65E023D70E0BBDBA7 /* TimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModel.swift; sourceTree = "<group>"; };
 		43797C2B7C71CCA5C6F099A6 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
-		44445F21B43658136083DF33 /* VaultFFIStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultFFIStubs.swift; sourceTree = "<group>"; };
 		450DE421203DC90321D44E31 /* VaultEngineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultEngineProvider.swift; sourceTree = "<group>"; };
 		4830E7DC9E82A1BE90C4BB9A /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		4C4014539BA0206B0ED48E74 /* SleepRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepRepository.swift; sourceTree = "<group>"; };
@@ -93,6 +111,7 @@
 		75FA6B9B68BACD4F18AC5373 /* RouteDestinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDestinations.swift; sourceTree = "<group>"; };
 		7DD924238AEE6F161D28E3DE /* LogFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFeedView.swift; sourceTree = "<group>"; };
 		8AA7F651590ED8B735ACB33D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8B3626FF0B52F1142E8A0CBA /* vaultFFI.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = vaultFFI.modulemap; sourceTree = "<group>"; };
 		8C5414749470F8CA068F4E1D /* MediaVaultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaVaultViewModel.swift; sourceTree = "<group>"; };
 		9635E822F1CC3DF34581276E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		9F576A3F2B951342311BE406 /* LogFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFeedViewModel.swift; sourceTree = "<group>"; };
@@ -125,6 +144,17 @@
 		FE1C37A5091736F61C57B900 /* EngineMilestoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineMilestoneRepository.swift; sourceTree = "<group>"; };
 		FE55FB7E9B9AE8AEEF62C408 /* BabyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C1C44D5A640534983F8B81E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92C41E5C5105C674C4F8F15D /* VaultFFI.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		042AA4B7DCC2417B1490D47C /* Models */ = {
@@ -227,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				C25C912CF6DA311851EA44A7 /* ios */,
+				BD3293296CA75427E3108A45 /* Frameworks */,
 				FA4066BBFF9909D07BD8D733 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -263,7 +294,9 @@
 			isa = PBXGroup;
 			children = (
 				B110B1CE9C867BA7F1ECD4B1 /* .gitkeep */,
-				44445F21B43658136083DF33 /* VaultFFIStubs.swift */,
+				1A41E06725516B2E345850E8 /* vault.swift */,
+				2FDE3810495E8110613027DD /* vaultFFI.h */,
+				8B3626FF0B52F1142E8A0CBA /* vaultFFI.modulemap */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -357,6 +390,14 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
+		BD3293296CA75427E3108A45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D75877F2C1BE58BFEADACD5 /* VaultFFI.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BFC8257AA938F2FEDA692018 /* Local */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +472,8 @@
 			buildConfigurationList = A24689B7D5A6C2A22DC24FBE /* Build configuration list for PBXNativeTarget "BabyVault" */;
 			buildPhases = (
 				04CE3C4AA68FC5D7C58F9F8C /* Sources */,
+				C1C44D5A640534983F8B81E0 /* Frameworks */,
+				DED0339F244E49A109A24314 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -536,8 +579,8 @@
 				1129C711EEEA9E3210D5C42B /* UnlockView.swift in Sources */,
 				4F6730810D8C3167DD69C437 /* UnlockViewModel.swift in Sources */,
 				C4DD75B3522B3DA99DB7B4F4 /* VaultEngineProvider.swift in Sources */,
-				84C5B0D3E033CDC63C7BA663 /* VaultFFIStubs.swift in Sources */,
 				5F635CFD88CE64804F7860D3 /* VaultMapper.swift in Sources */,
+				9E48413A6F283FC4548B72AE /* vault.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +596,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"build\"",
+				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -562,6 +609,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.babyvault.app;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = VAULT_FFI_AVAILABLE;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -695,6 +743,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"build\"",
+				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -704,6 +756,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.babyvault.app;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = VAULT_FFI_AVAILABLE;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

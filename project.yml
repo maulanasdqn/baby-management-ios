@@ -14,6 +14,9 @@ targets:
     type: application
     platform: iOS
     deploymentTarget: "17.0"
+    dependencies:
+      - framework: build/VaultFFI.xcframework
+        embed: true
     sources:
       - path: ios
         excludes:
@@ -31,3 +34,4 @@ targets:
         CODE_SIGN_STYLE: Automatic
         IPHONEOS_DEPLOYMENT_TARGET: "17.0"
         ENABLE_PREVIEWS: YES
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: VAULT_FFI_AVAILABLE
