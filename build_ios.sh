@@ -5,20 +5,18 @@
 #   ./build_ios.sh
 #
 # Prerequisites:
-#   - Rust toolchain with iOS targets (see ../baby-management/core/rust-toolchain.toml)
-#   - cargo-uniffi / uniffi-bindgen installed:
-#       cargo install uniffi-bindgen
+#   - Rust toolchain with iOS targets (see core/rust-toolchain.toml)
 #   - Xcode command-line tools (lipo, xcodebuild)
 #
 # Outputs:
-#   ../baby-management/ios/VaultFFI.xcframework  — linkable from Xcode / SPM
-#   Sources/BabyVault/Generated/vault.swift      — UniFFI-generated Swift bindings
+#   ios/VaultFFI.xcframework         — linkable from Xcode / SPM
+#   Sources/BabyVault/Generated/     — UniFFI-generated Swift bindings
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CORE_DIR="$SCRIPT_DIR/../baby-management/core"
-IOS_OUT="$SCRIPT_DIR/../baby-management/ios"
+CORE_DIR="$SCRIPT_DIR/core"
+IOS_OUT="$SCRIPT_DIR/ios"
 GENERATED_DIR="$SCRIPT_DIR/Sources/BabyVault/Generated"
 
 TARGET_DEVICE="aarch64-apple-ios"

@@ -11,12 +11,12 @@ let package = Package(
     ],
     targets: [
         // Real XCFramework built by build_ios.sh — path-based local binary target.
-        // Run `./build_ios.sh` first to generate ../baby-management/ios/VaultFFI.xcframework
+        // Run `./build_ios.sh` first to generate ios/VaultFFI.xcframework
         // then remove Generated/VaultFFIStubs.swift and uncomment VAULT_FFI_AVAILABLE below.
         //
         // .binaryTarget(
         //     name: "VaultFFI",
-        //     path: "../baby-management/ios/VaultFFI.xcframework"
+        //     path: "ios/VaultFFI.xcframework"
         // ),
         .executableTarget(
             name: "BabyVault",
