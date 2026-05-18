@@ -1,3 +1,0 @@
-# cargo-ndk handles linker injection automatically.
-# Set ANDROID_NDK_HOME before building.
-# Example: export ANDROID_NDK_HOME=$HOME/Android/Sdk/ndk/<version>
