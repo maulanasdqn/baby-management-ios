@@ -26,8 +26,12 @@ targets:
           - "README.md"
           - "project.yml"
           - ".gitignore"
-          - "BabyVault.xcodeproj"
-          - "build"
+          - "BabyVault.xcodeproj/**"
+          - "build/**"
+          - ".build/**"
+          - ".swiftpm/**"
+          - "Generated/vaultFFI.h"
+          - "Generated/vaultFFI.modulemap"
     info:
       path: Info.plist
     settings:
