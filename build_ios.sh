@@ -9,15 +9,15 @@
 #   - Xcode command-line tools (lipo, xcodebuild)
 #
 # Outputs:
-#   ios/VaultFFI.xcframework         — linkable from Xcode / SPM
-#   Sources/BabyVault/Generated/     — UniFFI-generated Swift bindings
+#   build/VaultFFI.xcframework    — linkable from Xcode / SPM
+#   ios/Generated/                — UniFFI-generated Swift bindings
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CORE_DIR="$SCRIPT_DIR/core"
-IOS_OUT="$SCRIPT_DIR/ios"
-GENERATED_DIR="$SCRIPT_DIR/Sources/BabyVault/Generated"
+IOS_OUT="$SCRIPT_DIR/build"
+GENERATED_DIR="$SCRIPT_DIR/ios/Generated"
 
 TARGET_DEVICE="aarch64-apple-ios"
 TARGET_SIM_ARM="aarch64-apple-ios-sim"
